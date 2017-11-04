@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <iterator>
-#include <fstream>
 #include "util.h"
 
 int main(int argc, char *argv[])

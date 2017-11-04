@@ -239,4 +239,18 @@ void run_server(int port, std::function<void(conn_t)> client_handler)
      }
 }
 
+void print_headers(const headers_t& headers) {
+    cout << "headers: \n";
+    for (auto h : headers) {
+        cout << h.first << " : " << h.second << '\n'; 
+    }
+    cout << '\n';
+}
 
+void print_body(const body_t& body) {
+    cout << "body: \n";
+    for (auto b : body) {
+        cout << b << " ";
+    }
+    cout << '\n';
+}

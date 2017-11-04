@@ -4,6 +4,12 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include <iostream>
+#include <sstream>
+#include <stdio.h>
+#include <stdio.h>
+#include <iterator>
+#include <fstream>
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
@@ -13,7 +19,9 @@ using conn_t = UINT_PTR;
 using conn_t = int;
 #endif
 
+using namespace std;
 using headers_t = std::map<std::string, std::string>;
+using body_t = std::vector<uint8_t>;
 
 void net_init();
 void error(const char *msg="");
@@ -26,3 +34,5 @@ void write_response(conn_t conn, int status, headers_t headers, const void *body
 std::string read_request(conn_t conn, headers_t &headers, std::vector<uint8_t> &body);
 int read_response(conn_t conn, headers_t& headers, std::vector<uint8_t> &body);
 
+void print_headers(const headers_t& headers);
+void print_body(const body_t& body);

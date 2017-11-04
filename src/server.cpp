@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "util.h"
 
 int main(int argc, char *argv[])
@@ -22,6 +21,21 @@ int main(int argc, char *argv[])
         printf("bot size %d\n", int(req_body.size()));
 
         write_response(conn, 200, {{"BotCommand", "exit"}}, nullptr, 0);
+
+        while (1) {
+            string line;
+            getline(cin, line);
+            istringstream is(line);
+
+            string cmd;
+            is >> cmd;
+
+            write_response(conn, 200, {{"x", cmd}}, nullptr, 0);
+            std::string request = read_request(conn, req_headers, req_body);
+            cout << "request: " << request << "\n"; 
+            print_headers(req_headers);
+            print_body(req_body); 
+        }
     });
 
     return 0;
