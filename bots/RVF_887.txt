@@ -1,0 +1,93 @@
+19
+Pick a warrior!
+4
+A) Elf
+B) Hobbit
+C) Batman
+D) Wizard
+You have been attacked. Choose your weapon!
+3
+A) Knife
+B) Dragonglass
+C) Sword of Griffindor
+You came across an angry beast. What do you do?
+3
+A) Play dead
+B) Fight him!
+C) RUN!!
+You're at a cross path. Where do you go?
+2
+A) Go Right
+B) Go Left
+You're under attack and need help. Who do you call:
+4
+A) Gandalf
+B) Ender
+C) A friend
+D) Jon Snow
+What's your animal companion?
+4
+A) Dragon
+B) Monstro
+C) Raichu
+D) Vulpix
+You're tired. Where do you choose to sleep?
+2
+A) In a tree
+B) On the cold ground
+You travelled a long way and you came across a village:
+2
+A) You stay there to rest
+B) You continue your journey
+On the road you find some wild berries
+2
+A) You eat them
+B) You leave them there
+You ate some berries and now you are sick:
+2
+A) You regret that you ate them
+B) They looked too good not to eat them
+You didn't eat the wild berries and now you are hungry:
+2
+A) You go back and eat them 
+B) You start searching for some real food
+It started to rain.
+2
+A) You hide under a tree
+B) You continue your journey like a real man
+The forest starts to fin out...
+3
+A) You continue to follow the path
+B) You look for another road
+C) May the force be with you
+You slept in a village and now you're no longer tired.
+3
+A) You go back to your journey
+B) You stay in the village a little longer
+C) You want to go back home
+You came across a band of thieves on your way.
+2
+A) You join them
+B) You steal their gold
+Now you can get a new ability. What will that be?
+4
+A) Parseltongue
+B) Casting spells
+C) Breathing fire
+D) Invisibility
+You start to learn new spells. Now you can:
+3
+A) Petrify people
+B) Turn them into a white walker
+C) Make them love you
+You came across someone. It is a friend or an enemy:
+3
+A) Friend
+B) Enemy
+C) Irrelevant...I will kill him anyway
+The enemy attacks you. He wants your:
+4
+A) Money
+B) Sword
+C) Golden ring
+D) Dog

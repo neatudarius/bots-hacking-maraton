@@ -245,7 +245,7 @@ void run_server(int port, std::function<void(conn_t)> client_handler)
 void print_headers(const headers_t& headers) {
     cout << "headers: \n";
     for (auto h : headers) {
-        cout << h.first << " : " << h.second << '\n'; 
+        cout << h.first << " : (" << h.second << ")\n"; 
     }
 }
 
