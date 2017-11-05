@@ -12,6 +12,7 @@ void strategy_bot_123(conn_t &conn);
 void strategy_bot_1036(conn_t &conn);
 void strategy_bot_1620(conn_t &conn);
 void strategy_bot_1848(conn_t &conn);
+void strategy_bot_1(conn_t &conn);
 
 
 typedef void (*strategy)(conn_t& conn);
@@ -20,7 +21,8 @@ map<int, strategy> id2strategy = {
     {121, &strategy_bot_121},
     {123, &strategy_bot_123},
     {1620, &strategy_bot_1620},
-    {1848, &strategy_bot_1848}
+    {1848, &strategy_bot_1848},
+    {1, &strategy_bot_1}
 };
 
 
@@ -302,5 +304,113 @@ void strategy_bot_1848(conn_t &conn) {
         cout << "request: " << request << "\n"; 
         print_headers(req_headers);
         print_body(req_body); 
+    }
+}
+
+
+void strategy_bot_1(conn_t &conn) {
+    headers_t req_headers;
+    std::vector<uint8_t> req_body;
+    std::string request;
+
+    string cmd = " hello ";
+    cout << "(" << cmd << ")\n";
+    write_response(conn, 200, {{"BotCommand", cmd}}, nullptr, 0);
+    
+    request = read_request(conn, req_headers, req_body);
+    cout << "request: " << request << "\n"; 
+    print_headers(req_headers);
+    print_body(req_body); 
+
+
+    // cmd = " hello ";
+    // cout << "(" << cmd << ")\n";
+    // write_response(conn, 200, {{"BotCommand", cmd}}, nullptr, 0);
+    
+    //  request = read_request(conn, req_headers, req_body);
+    // cout << "request: " << request << "\n"; 
+    // print_headers(req_headers);
+    // print_body(req_body); 
+
+
+    int n = 43;
+    while (1) {
+        // string line;
+        // getline(cin, line);
+        // istringstream is(line);
+
+        // string cmd;
+        // is >> cmd;
+        // cmd = line;
+
+        cmd = " number ";
+
+        cout << "(" << cmd << ")\n";
+        write_response(conn, 200, {{"BotCommand", cmd}}, nullptr, 0);
+
+        std::string request = read_request(conn, req_headers, req_body);
+        cout << "request: " << request << "\n"; 
+        print_headers(req_headers);
+        print_body(req_body); 
+        cout << n << "\n";
+        n = 2 * n + 1;
+
+        if (n == -1) {
+            break;
+        }
+
+    }
+
+
+    n = 43;
+    while (1) {
+        // string line;
+        // getline(cin, line);
+        // istringstream is(line);
+
+        // string cmd;
+        // is >> cmd;
+        // cmd = line;
+
+        string cmd = "" + to_string(n)  + "";
+
+        cout << "(" << cmd << ")\n";
+        write_response(conn, 200, {{"BotCommand", cmd}}, nullptr, 0);
+
+        std::string request = read_request(conn, req_headers, req_body);
+        cout << "request: " << request << "\n"; 
+        print_headers(req_headers);
+        print_body(req_body); 
+        n = 2 * n + 1;
+
+        if (n == -1) {
+            break;
+        }
+    }
+
+
+
+    {
+        headers_t req_headers;
+        std::vector<uint8_t> req_body;
+        std::string request;
+
+        while (1) {
+            string line;
+            getline(cin, line);
+            istringstream is(line);
+
+            string cmd;
+            // is >> cmd;
+            cmd = line;
+
+            cout << "(" << cmd << ")\n";
+            write_response(conn, 200, {{"BotCommand", cmd}}, nullptr, 0);
+            
+            std::string request = read_request(conn, req_headers, req_body);
+            cout << "request: " << request << "\n"; 
+            print_headers(req_headers);
+            print_body(req_body); 
+        }
     }
 }

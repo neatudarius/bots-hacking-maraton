@@ -264,4 +264,10 @@ void print_body(const body_t& body) {
         // printf("%4d", b - '0');
     }
     cout << '\n';
+
+
+    for (auto b : body) {
+        cout << "(" << ( (int) (char) b) << ")" ;
+    }
+    cout << '\n';
 }
