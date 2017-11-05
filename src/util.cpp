@@ -88,6 +88,8 @@ void write_request(conn_t conn, const char *path, headers_t headers, const void 
 
 void write_response(conn_t conn, int status, headers_t headers, const void *body, int body_size)
 {
+    // cout << "write_response\n";
+    
     headers["Content-Length"] = std::to_string(body_size);
 
     char response[4096];
@@ -173,6 +175,7 @@ std::string read_request(conn_t conn, headers_t &headers, std::vector<uint8_t> &
 
 int read_response(conn_t conn, headers_t &headers, std::vector<uint8_t> &body)
 {
+    // cout << "read_response\n";
     auto start_line = read_message(conn, headers, body);
     int status;
     sscanf(start_line.c_str(), "HTTP/1.1 %d", &status);
@@ -244,13 +247,12 @@ void print_headers(const headers_t& headers) {
     for (auto h : headers) {
         cout << h.first << " : " << h.second << '\n'; 
     }
-    cout << '\n';
 }
 
 void print_body(const body_t& body) {
     cout << "body: \n";
     for (auto b : body) {
-        cout << b << " ";
+        cout << b;
     }
     cout << '\n';
 }
