@@ -11,6 +11,7 @@ void strategy_bot_121(conn_t &conn);
 void strategy_bot_123(conn_t &conn);
 void strategy_bot_1036(conn_t &conn);
 void strategy_bot_1620(conn_t &conn);
+void strategy_bot_1848(conn_t &conn);
 
 
 typedef void (*strategy)(conn_t& conn);
@@ -18,7 +19,8 @@ map<int, strategy> id2strategy = {
     {1036, &strategy_bot_1036},
     {121, &strategy_bot_121},
     {123, &strategy_bot_123},
-    {1620, &strategy_bot_1620}
+    {1620, &strategy_bot_1620},
+    {1848, &strategy_bot_1848}
 };
 
 
@@ -277,7 +279,25 @@ void strategy_bot_1620(conn_t &conn) {
 
         write_response(conn, 200, {{"BotCommand", t}}, nullptr, 0);
         cout << t << "\n";
-        
+
+        request = read_request(conn, req_headers, req_body);
+        cout << "request: " << request << "\n"; 
+        print_headers(req_headers);
+        print_body(req_body); 
+    }
+}
+
+void strategy_bot_1848(conn_t &conn) {
+    vector<string> tokens = {"start", "get_input","check"};
+    for (auto t : tokens) {
+        headers_t req_headers;
+        std::vector<uint8_t> req_body;
+        std::string request;
+
+
+        write_response(conn, 200, {{"BotCommand", t}}, nullptr, 0);
+        cout << t << "\n";
+
         request = read_request(conn, req_headers, req_body);
         cout << "request: " << request << "\n"; 
         print_headers(req_headers);

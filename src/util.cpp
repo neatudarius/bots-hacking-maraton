@@ -250,9 +250,18 @@ void print_headers(const headers_t& headers) {
 }
 
 void print_body(const body_t& body) {
-    cout << "body: \n";
+    // cout << "body(" << body.size() <<  ") : \n";
+    // for (int i = 0; i < body.size(); ++i) {
+    //     if (body[i] == ' ') continue;
+
+    //     printf("%4d", i / 2);
+    // }
+    // cout << "\n";
+
     for (auto b : body) {
         cout << b;
+        // if (b == ' ') continue;
+        // printf("%4d", b - '0');
     }
     cout << '\n';
 }
