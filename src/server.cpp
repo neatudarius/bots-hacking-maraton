@@ -43,7 +43,6 @@ int main(int argc, char *argv[]) {
       default_handler(conn);
     }
 
-    // strategy_bot_1036(conn);
   });
 
   return 0;
@@ -60,7 +59,6 @@ void default_handler(conn_t &conn) {
     istringstream is(line);
 
     string cmd;
-    // is >> cmd;
     cmd = line;
 
     cout << "(" << cmd << ")\n";
@@ -107,7 +105,6 @@ void strategy_bot_1036(conn_t &conn) {
     req_headers["row"] = to_string(x);
     req_headers["col"] = to_string(y);
 
-    // print_headers(req_headers);
     write_response(conn, 200, req_headers, nullptr, 0);
 
     if (req_headers.size()) {
@@ -305,25 +302,8 @@ void strategy_bot_1(conn_t &conn) {
   print_headers(req_headers);
   print_body(req_body);
 
-  // cmd = " hello ";
-  // cout << "(" << cmd << ")\n";
-  // write_response(conn, 200, {{"BotCommand", cmd}}, nullptr, 0);
-
-  //  request = read_request(conn, req_headers, req_body);
-  // cout << "request: " << request << "\n";
-  // print_headers(req_headers);
-  // print_body(req_body);
-
   int n = 43;
   while (1) {
-    // string line;
-    // getline(cin, line);
-    // istringstream is(line);
-
-    // string cmd;
-    // is >> cmd;
-    // cmd = line;
-
     cmd = " number ";
 
     cout << "(" << cmd << ")\n";
@@ -343,14 +323,6 @@ void strategy_bot_1(conn_t &conn) {
 
   n = 43;
   while (1) {
-    // string line;
-    // getline(cin, line);
-    // istringstream is(line);
-
-    // string cmd;
-    // is >> cmd;
-    // cmd = line;
-
     string cmd = "" + to_string(n) + "";
 
     cout << "(" << cmd << ")\n";
@@ -378,7 +350,6 @@ void strategy_bot_1(conn_t &conn) {
       istringstream is(line);
 
       string cmd;
-      // is >> cmd;
       cmd = line;
 
       cout << "(" << cmd << ")\n";
